@@ -1,0 +1,65 @@
+﻿@model List<Course>
+
+<h1> Courses</h1>
+
+<div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>CourseId</th>
+				<th>CourseNumber</th>
+				<th>CourseName</th>
+				<th>Description</th>
+			</tr>
+
+		</thead>
+		<tbody>
+			@foreach(var course in Model){
+
+				<tr>
+					<td>@course.CourseId</td>
+					<td>@course.CourseNumber</td>
+					<td class="nav-link" onclick="openModel(@course.CourseId)">@course.CourseName</td>
+					<td>@course.Description</td>
+				</tr>
+			}
+		</tbody>
+
+	</table>
+
+</div>
+        @foreach (var course in Model)
+		{
+			<div class="course-students-model  course-students-model-@course.CourseId">
+				<h2>@course.CourseName Students </h2>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>StudentsId</th>
+							<th>FirstName</th>
+							<th>LastName</th>
+							<th>Email</th>
+							<th>PhoneNo</th>
+							
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var students in course.students){
+							<tr>
+								<td>@students.StudentId</td>
+								<td>@students.FirstName</td>
+								<td>@students.LastName</td>
+								<td>@students.Email</td>
+								<td>@students.PhoneNo</td>
+							</tr>
+						}
+					</tbody>
+
+
+				</table>
+				
+				<button onclick="closeModel(@course.CourseId)">Close</button>
+			</div>
+			
+			
+		}

@@ -1,0 +1,30 @@
+﻿@model List<Instructors>
+
+	<h1> Instructors</h1>
+	<div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>InstructorId</th>
+					<th>FirstName</th>
+					<th>LastName</th>
+					<th>Email</th>
+					<th>Course</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var inst in Model)
+				{
+					<tr>
+						<td>@inst.InstructorId</td>
+						<td>@inst.FirstName</td>
+						<td>@inst.LastName</td>
+						<td>@inst.Email</td>
+						<td>@inst.Course</td>
+					</tr>
+					
+				}
+			</tbody>
+
+		</table>
+	</div>
