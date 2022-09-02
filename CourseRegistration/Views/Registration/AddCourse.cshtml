@@ -1,0 +1,12 @@
+﻿@model Course;
+
+<h2> Add Course</h2>
+
+<form asp-action="SaveCourse">
+
+	<div> <label asp-for="CourseId"></label> <input asp-for="CourseId"/></div>
+	<div> <label asp-for="CourseNumber"></label> <input asp-for="CourseNumber"/></div>
+	<div> <label asp-for="CourseName"></label> <input asp-for="CourseName"/></div>
+	<div> <label asp-for="Description"></label> <input asp-for="Description"/></div>
+	<div> <input type="submit" value="Submit" /></div>
+</form>
